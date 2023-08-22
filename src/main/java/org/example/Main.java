@@ -17,7 +17,6 @@ public class Main {
             String[] items = p.split(":");
             String value = items[1];
             String key = items[0];
-            pokemonMap.put(key,value);
         }
         System.out.println("ポケモンの名前を入力してください。");
         Scanner input = new Scanner(System.in);
