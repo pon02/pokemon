@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) throws PokemonNotFoundException {
+    public static void main(String[] args)  {
 
         List<String> pokemon = new ArrayList<>();
         pokemon.add("ピカチュウ:電気");
