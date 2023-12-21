@@ -11,6 +11,7 @@ public class Main {
         pokemon.add("フシギダネ:草");
         pokemon.add("ヒトカゲ:火");
         pokemon.add("コイキング:水");
+        pokemon.add("ゼニガメ:水");
 
         Map<String,String> pokemonMap = new HashMap<>();
         for (String p : pokemon) {
