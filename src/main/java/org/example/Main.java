@@ -24,11 +24,32 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String pKey = input.nextLine();
 
-        if (!pokemonMap.containsKey(pKey)) {
-            throw new PokemonNotFoundException("そのポケモンはまだゲットしていません。");
+        try {
+            if (pKey == null || pKey.isEmpty()) {
+                throw new InputMismatchException();
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("未入力です。");
+            System.exit(0);
         }
-
-        System.out.println("そのポケモンの種類は" + pokemonMap.get(pKey) + "です。");
+        try {
+            if (pKey != null && !pKey.matches("[ァ-ヶー]+")) {
+                throw new InputMismatchException();
+            }
+        } catch (InputMismatchException e) {
+                System.out.println("カタカナで入力してください。");
+                System.exit(0);
+        }
+        try{
+            if (!pokemonMap.containsKey(pKey)) {
+                throw new PokemonNotFoundException("そのポケモンはまだゲットしていません。");
+            } else  {
+                System.out.println("そのポケモンの種類は" + pokemonMap.get(pKey) + "です。");
+            }
+        } catch (PokemonNotFoundException e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
 
     }
 }
